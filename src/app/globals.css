@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 91% 86%;
+    --foreground: 220 14% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 25%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 25%;
+ 
+    --primary: 214 52% 25%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 220 14% 25%;
+ 
+    --muted: 214 32% 91%;
+    --muted-foreground: 220 8% 46%;
+ 
+    --accent: 214 32% 91%;
+    --accent-foreground: 220 14% 25%;
+ 
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 195 84% 54%;
+ 
+    --radius: 0.75rem;
+  }
+ 
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 214 52% 25%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 220 15% 20%;
+    --muted-foreground: 214 15% 75%;
+ 
+    --accent: 220 15% 20%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 195 84% 54%;
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90;
+}
+
+/* Links styling */
+a {
+  @apply text-primary hover:text-primary/80;
+}
+
+/* Custom text highlights */
+.text-highlight {
+  @apply text-primary font-semibold;
+}
+
+/* Map blue color classes to primary color */
+@layer utilities {
+  /* Background colors */
+  .bg-blue-50 {
+    @apply bg-primary/10;
+  }
+  .bg-blue-100 {
+    @apply bg-primary/20;
+  }
+  .bg-blue-500 {
+    @apply bg-primary;
+  }
+  .bg-blue-600 {
+    @apply bg-primary;
+  }
+  .bg-blue-700 {
+    @apply bg-primary/90;
+  }
+  
+  /* Text colors */
+  .text-blue-500 {
+    @apply text-primary;
+  }
+  .text-blue-600 {
+    @apply text-primary;
+  }
+  .text-blue-700 {
+    @apply text-primary/90;
+  }
+  .text-blue-800 {
+    @apply text-primary/80;
+  }
+  
+  /* Border colors */
+  .border-blue-100 {
+    @apply border-primary/20;
+  }
+  
+  /* Hover states */
+  .hover\:bg-blue-100:hover {
+    @apply hover:bg-primary/20;
+  }
+  .hover\:bg-blue-600:hover {
+    @apply hover:bg-primary;
+  }
+  .hover\:bg-blue-700:hover {
+    @apply hover:bg-primary/90;
+  }
+  .hover\:text-blue-700:hover {
+    @apply hover:text-primary/90;
+  }
+  .hover\:text-blue-800:hover {
+    @apply hover:text-primary/80;
+  }
+  
+  /* Focus states */
+  .focus\:ring-blue-500:focus {
+    @apply focus:ring-primary;
+  }
+}
+
+/* Rest of existing styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom styles for a calming, minimalist experience */
+.gradient-bg {
+  background-color: hsl(15, 75%, 98%);
+}
+
+.card-hover {
+  @apply hover:shadow-lg hover:scale-[1.01];
+  transition: all 0.3s ease-in-out;
+}
+
+.soft-shadow {
+  @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-200 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-300;
+}
+
+body {
+  background-color: #f0f4f8;
+}
+
+/* Make all inputs rounded by default */
+input, textarea, select {
+  border-radius: 9999px; /* rounded-full equivalent */
+}
+
+textarea {
+  border-radius: 1.5rem; /* slightly less rounded for textareas */
+} 
